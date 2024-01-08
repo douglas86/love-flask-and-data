@@ -1,5 +1,5 @@
 import os
-from taskmanager import app
+from taskmanager import app, db
 
 if __name__ == "__main__":
     app.run(
@@ -7,3 +7,6 @@ if __name__ == "__main__":
         port=int(os.environ.get("PORT")),
         debug=os.environ.get("DEBUG")
     )
+    with app.app_context():
+        db.create_all()
+        app.run(debug=True)
