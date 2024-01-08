@@ -1,0 +1,16 @@
+If there is a problem complaining about app.app_context()
+Then do the following:
+
+open up a Heroku terminal
+click on the more button in the top and say run console
+in the console type python
+then use the following commands
+
+from taskmanager import app, db
+app.app_context().push()
+db.create_all()
+
+then you can exit the heroku shell using exit
+exit()
+
+then refresh browser and manually run the deploy
